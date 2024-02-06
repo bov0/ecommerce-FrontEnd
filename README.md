@@ -1,4 +1,4 @@
-# eccomerce - Frontend
+# 🏪eccomerce - Frontend
 
 En este proyecto crearemos un eccomerce que funcionara sin uso de backend, mediante fetch a ficheros json y almacenaje en local storage.
 ## Installation
