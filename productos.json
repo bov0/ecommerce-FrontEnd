@@ -1,0 +1,19 @@
+{
+    "zapatillas": [
+      { "modelo": "AirMax 2000", "marca": "VenturaSport", "color": "Negro", "precio": 89.99, "imagen": "img/AirMax-2000.jpg" },
+      { "modelo": "FlexRun X", "marca": "StridePro", "color": "Blanco", "precio": 79.99, "imagen": "img/FlexRun-X.jpg" },
+      { "modelo": "UltraGrip 500", "marca": "PulseStep", "color": "Rojo", "precio": 94.99, "imagen": "img/UltraGrip-500.jpg" },
+      { "modelo": "Velocity Boost", "marca": "SprintTech", "color": "Azul", "precio": 109.99, "imagen": "img/Velocity-Boost.jpg" },
+      { "modelo": "Eclipse Runner", "marca": "SwiftStride", "color": "Verde", "precio": 87.50, "imagen": "img/Eclipse-Runner.jpg" },
+      { "modelo": "TrailBlazer Pro", "marca": "AllTerrain", "color": "Gris", "precio": 99.99, "imagen": "img/TrailBlazer-Pro.jpg" },
+      { "modelo": "PowerGlide Elite", "marca": "SpeedFlex", "color": "Negro/Azul", "precio": 119.99, "imagen": "img/PowerGlide-Elite.jpg" },
+      { "modelo": "AirStream 300", "marca": "AeroFit", "color": "Blanco/Rojo", "precio": 84.99, "imagen": "img/AirStream-300.jpg" },
+      { "modelo": "Stealth Sprinter", "marca": "StealthGear", "color": "Negro/Verde", "precio": 95.50, "imagen": "img/Stealth-Sprinter.jpg" },
+      { "modelo": "Dynamic Runner", "marca": "DynamicFit", "color": "Azul/Morado", "precio": 102.99, "imagen": "img/Dynamic-Runner.jpg" },
+      { "modelo": "Barsmpson", "marca": "TrailMaster", "color": "Gris/Amarillo", "precio": 88.75, "imagen": "img/Barsmpson.jpg" },
+      { "modelo": "RapidFire X1", "marca": "FireSpeed", "color": "Rojo/Negro", "precio": 97.99, "imagen": "img/RapidFire-X1.jpg" },
+      { "modelo": "SkyRunner Pro", "marca": "SkyHigh", "color": "Azul/Blanco", "precio": 115.00, "imagen": "img/SkyRunner-Pro.jpg" },
+      { "modelo": "Pinnacle Performer", "marca": "PeakStride", "color": "Negro/Plateado", "precio": 109.99, "imagen": "img/Pinnacle-Performer.jpg" },
+      { "modelo": "SwiftGlide 400", "marca": "SwiftMotion", "color": "Gris/Rojo", "precio": 92.25, "imagen": "img/SwiftGlide-400.jpg" }
+    ]
+  }  

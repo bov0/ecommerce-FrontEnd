@@ -1,0 +1,17 @@
+nav {
+    backdrop-filter: blur(10px);
+}
+
+#aside {
+    transition: all 0.5s linear;
+}
+
+#aside:hover {
+    filter: brightness(55%);
+    transform: scale(1.05);
+}
+
+.carousel-item {
+    filter: brightness(80%);
+}
+

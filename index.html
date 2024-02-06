@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GZ Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2e6d5da39f.js" crossorigin="anonymous"></script>
+    <!-- Leaflet JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body class="bg-body-tertiary">
+    <nav class="w-75 mx-auto navbar sticky-top navbar-dark bg-dark align-items-center rounded-4">
+        <div class="container-fluid">
+            <div id="contenedor" class="d-flex container-fluid justify-content-lg-between">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Logo-removebg-preview.png" alt="Logo" width="60" height="60">
+                </a>
+
+                <form method="GET" action="resultados.html"
+                    class="d-flex w-100 justify-content-center p-2 align-items-center" role="search">
+                    <input class="form-control me-2 w-50" type="search" name="busqueda" placeholder="Buscar modelo"
+                        aria-label="Search">
+                    <div class="d-flex align-items-center">
+                        <button id="lupa" class="btn btn-sm btn-outline-light" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <i id="microfono" class="fa-solid fa-microphone btn btn-outline-light"></i>
+                    </div>
+                </form>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item" id="sesionItem">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Ver carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="mx-auto row py-5 justify-content-center">
+            <div id="carousel" class="col-9 w-50">
+                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" id="carouselMain">
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 d-flex flex-column">
+                <aside class="w-100 pb-4">
+                    <img id="aside" class="rounded-4 w-100" src="img/Promociones.jpeg" alt="">
+                </aside>
+                <aside class="w-100">
+                    <img id="aside" class="rounded-4 w-100" src="img/Novedades.jpeg" alt="">
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div id="carouselZapatillas" class="justify-content-center"></div>
+
+    <div
+        class="mx-auto d-flex flex-column flex-md-row align-items-center justify-content-center w-75 bg-dark p-4 m-4 rounded-4">
+        <div id="texto" class="w-50 text-white m-4">
+            <h2 class="text-center text-md-start fw-bold pb-3">Sobre Nosotros</h2>
+            <p class="text-center text-md-start">
+                Bienvenido a nuestro emocionante mundo de calzado en línea, donde la moda se encuentra con la
+                comodidad: <span class="fw-bold">GZ Shop</span>! Este proyecto nació de la fusión de la pasión por
+                el estilo y
+                el deseo de simplificar la búsqueda del par perfecto de zapatillas. Inspirados por la creencia de
+                que cada paso debe ser una declaración de estilo, nos propusimos crear un espacio donde los amantes
+                del calzado puedan explorar y adquirir las últimas tendencias de manera conveniente.
+            </p>
+
+        </div>
+        <img class="w-25 rounded-4" src="img/escaparate.jpeg" alt="">
+    </div>
+
+    <div
+        class="mx-auto d-flex flex-column flex-md-row align-items-center justify-content-center w-75 bg-dark p-4 m-4 rounded-4">
+        <div id="texto" class="w-50 text-white m-4">
+            <h2 class="text-center text-md-start fw-bold pb-3">Donde encontrarnos</h2>
+            <p class="text-center text-md-start">
+                Actualmente solo disponemos de una tienda física pero no dudes en venir
+                a comprar y compartir tu experiencia en persona con nosotros.
+            </p>
+            <input type="button" value="Encontrarme en el mapa" class="btn btn-light" onclick="setFullMap()">
+
+        </div>   
+            <div id="map" class="map map-home w-50 rounded-3" style="margin:12px 0 12px 0;height:300px;"></div>
+    </div>
+
+    <footer class="mx-auto w-75 bg-dark text-white rounded-4">
+        <div class="row p-5 pb-4 align-items-center justify-content-center text-center w-100">
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">GZ Shop</a></p>
+                <p><a class="nav-link" href="informacion.html">GZShop@gmail.com</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Aviso legal</a></p>
+                <p><a class="nav-link" href="informacion.html">Privacidad del sitio</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Condiciones de uso</a></p>
+                <p><a class="nav-link" href="informacion.html">Condiciones de venta</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalCookies" tabindex="-1" role="dialog" aria-labelledby="modalCookiesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCookieslabel">Aviso de Cookies</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia en nuestra tienda
+                        en línea. Al continuar navegando, usted acepta nuestro uso de cookies.</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="aceptarCookies" type="button" class="mx-auto btn btn-primary w-change-btn">Aceptar
+                        Cookies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cookie.js"></script>
+    <script src="js/carouselMain.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/BuscadorVoz.js"></script>
+    <script src="js/sesionNav.js"></script>
+</body>
+
+</html>

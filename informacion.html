@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2e6d5da39f.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-body-tertiary">
+    <nav class="w-75 mx-auto navbar sticky-top navbar-dark bg-dark align-items-center rounded-4">
+        <div class="container-fluid">
+            <div id="contenedor" class="d-flex container-fluid justify-content-lg-between">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Logo-removebg-preview.png" alt="Logo" width="60" height="60">
+                </a>
+
+                <form method="GET" action="resultados.html"
+                    class="d-flex w-100 justify-content-center p-2 align-items-center" role="search">
+                    <input class="form-control me-2 w-50" type="search" name="busqueda" placeholder="Buscar modelo"
+                        aria-label="Search">
+                    <div class="d-flex align-items-center">
+                        <button id="lupa" class="btn btn-sm btn-outline-light" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <i id="microfono" class="fa-solid fa-microphone btn btn-outline-light"></i>
+                    </div>
+                </form>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item" id="sesionItem">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Ver carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="mx-auto w-75 bg-light text-center py-4">
+        <h1>GZ Shop</h1>
+    </header>
+    <div class="mx-auto container justify-content-center text-center text-md-start mt-4 w-75">
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Para contactarnos, puedes enviarnos un correo electrónico a <a
+                    href="#" class="link-dark">GZShop@gmail.com</a>.</p>
+        </section>
+
+        <section id="aviso-legal">
+            <h2>Aviso legal</h2>
+            <p>Este sitio web es propiedad de <span><b>GZ Shop</b></span>. Al acceder y utilizar este sitio web, usted
+                acepta
+                cumplir con los términos y condiciones establecidos en este aviso legal. Para obtener más información,
+                consulte nuestros <a class="link-dark" href="#condiciones-uso">términos y condiciones de uso</a>.</p>
+        </section>
+
+        <section id="privacidad">
+            <h2>Privacidad del sitio</h2>
+            <p>Nuestra política de privacidad describe cómo recopilamos, almacenamos y utilizamos la información
+                personal que usted proporciona. Puede obtener más información leyendo nuestra
+                <a class="link-dark" href="#aviso-legal">política de privacidad</a>.
+            </p>
+        </section>
+
+        <section id="condiciones-uso">
+            <h2>Condiciones de uso</h2>
+            <p>Al utilizar este sitio web, usted acepta cumplir con nuestras condiciones de uso. Lea detenidamente
+                nuestras condiciones antes de continuar. Para obtener más detalles, consulte nuestra sección completa de
+                <a class="link-dark" href="#aviso-legal">términos y condiciones</a>.
+            </p>
+        </section>
+
+        <section id="condiciones-venta">
+            <h2>Condiciones de venta</h2>
+            <p>Si realiza compras a través de nuestro sitio web, las condiciones de venta se aplicarán a esas
+                transacciones. Le recomendamos que lea nuestras <a class="link-dark" href="#aviso-legal">condiciones de
+                    venta</a> antes de
+                realizar una compra.</p>
+        </section>
+    </div>
+
+    <footer
+        class="mx-auto w-75 bg-dark text-white rounded-4">
+        <div class="row p-5 pb-4 align-items-center justify-content-center text-center w-100">
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">GZ Shop</a></p>
+                <p><a class="nav-link" href="informacion.html">GZShop@gmail.com</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Aviso legal</a></p>
+                <p><a class="nav-link" href="informacion.html">Privacidad del sitio</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Condiciones de uso</a></p>
+                <p><a class="nav-link" href="informacion.html">Condiciones de venta</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/BuscadorVoz.js"></script>
+    <script src="js/sesionNav.js"></script>
+</body>
+
+</html>

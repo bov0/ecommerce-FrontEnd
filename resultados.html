@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2e6d5da39f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="w-75 mx-auto navbar sticky-top navbar-dark bg-dark align-items-center rounded-4">
+        <div class="container-fluid">
+            <div id="contenedor" class="d-flex container-fluid justify-content-lg-between">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Logo-removebg-preview.png" alt="Logo" width="60" height="60">
+                </a>
+
+                <form method="GET" action="resultados.html"
+                    class="d-flex w-100 justify-content-center p-2 align-items-center" role="search">
+                    <input class="form-control me-2 w-50" type="search" name="busqueda" placeholder="Buscar modelo"
+                        aria-label="Search">
+                    <div class="d-flex align-items-center">
+                        <button id="lupa" class="btn btn-sm btn-outline-light" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <i id="microfono" class="fa-solid fa-microphone btn btn-outline-light"></i>
+                    </div>
+                </form>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item" id="sesionItem">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Ver carrito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="mx-auto text-center pt-5 fw-bold"><u>Resultados</u></h1>
+    <div class="mx-auto card-deck d-flex justify-content-center flex-wrap pt-3 w-75"></div>
+
+    <footer class="mx-auto w-75 bg-dark text-white rounded-4">
+        <div class="row p-5 pb-4 align-items-center justify-content-center text-center w-100">
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">GZ Shop</a></p>
+                <p><a class="nav-link" href="informacion.html">GZShop@gmail.com</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Aviso legal</a></p>
+                <p><a class="nav-link" href="informacion.html">Privacidad del sitio</a></p>
+            </div>
+            <div class="col">
+                <p><a class="nav-link" href="informacion.html">Condiciones de uso</a></p>
+                <p><a class="nav-link" href="informacion.html">Condiciones de venta</a></p>
+            </div>
+        </div>
+    </footer>
+    <audio id="sonidoCarrito" style="display:none;">
+        <source src="audio/anadirCarrito.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            audio = document.getElementById('sonidoCarrito');
+            const urlParams = new URLSearchParams(window.location.search);
+            const busqueda = urlParams.get('busqueda');
+
+            const cardDeck = document.querySelector('.card-deck');
+
+            fetch('productos.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.zapatillas.forEach(zapatilla => {
+                        if (zapatilla.modelo.toLowerCase().includes(busqueda.toLowerCase())) {
+                            const card = document.createElement('div');
+                            card.className = 'card m-3 text-white position-relative rounded-4';
+                            card.style.width = '14rem';
+
+                            const imagen = document.createElement('img');
+                            imagen.className = 'card-img-top';
+                            imagen.src = zapatilla.imagen;
+                            imagen.alt = zapatilla.modelo;
+                            imagen.className = 'rounded-4';
+
+                            const cardBody = document.createElement('div');
+                            cardBody.className = 'card-img-overlay position-absolute top-0 d-flex flex-column justify-content-center rounded-4';
+                            cardBody.style.opacity = '0';
+
+                            const titulo = document.createElement('h5');
+                            titulo.className = 'card-title';
+                            titulo.textContent = zapatilla.modelo;
+
+                            const marca = document.createElement('p');
+                            marca.className = 'card-text';
+                            marca.textContent = 'Marca: ' + zapatilla.marca;
+
+                            const color = document.createElement('p');
+                            color.className = 'card-text';
+                            color.textContent = 'Color: ' + zapatilla.color;
+
+                            const precio = document.createElement('p');
+                            precio.className = 'card-text';
+                            precio.textContent = 'Precio: ' + zapatilla.precio + ' €';
+
+                            const boton = document.createElement('button');
+                            boton.className = 'mx-auto btn btn-sm w-75 btn-light text-center';
+                            boton.id = 'boton';
+                            boton.textContent = 'Añadir carrito';
+                            boton.addEventListener('click', () => anadirCarrito(zapatilla));
+
+                            cardBody.appendChild(titulo);
+                            cardBody.appendChild(marca);
+                            cardBody.appendChild(color);
+                            cardBody.appendChild(precio);
+                            cardBody.appendChild(boton);
+
+                            card.addEventListener('mouseover', () => {
+                                cardBody.style.opacity = '1';
+                            });
+
+                            card.addEventListener('mouseout', () => {
+                                cardBody.style.opacity = '0';
+                            });
+
+                            card.appendChild(imagen);
+                            card.appendChild(cardBody);
+
+                            cardDeck.appendChild(card);
+                        }
+
+                    });
+                })
+                .catch(error => console.error('Error al realizar fetch:', error));
+        });
+
+        function mostrarNotificacion(mensaje, icono) {
+            if (!('Notification' in window)) {
+                console.error('Las notificaciones no son compatibles en este navegador.');
+                return;
+            }
+
+            if (Notification.permission === 'granted') {
+                const opciones = {
+                    body: mensaje,
+                    icon: icono,
+                };
+
+                const notificacion = new Notification('GZ Shop', opciones);
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        mostrarNotificacion(mensaje, icono);
+                    }
+                });
+            }
+        }
+
+        function anadirCarrito(zapatilla) {
+            const nombreZapatilla = zapatilla.modelo;
+
+            if (!localStorage.getItem('email')) {
+                mostrarNotificacion('Tienes que iniciar sesión', null);
+            } else {
+                let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+                const productoExistente = carrito.find(producto => producto === nombreZapatilla);
+
+                if (!productoExistente) {
+                    carrito.push(nombreZapatilla);
+
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+                    if (audio) {
+                        audio.play();
+                    }
+
+                    mostrarNotificacion(`Producto añadido al carrito: ${nombreZapatilla}`, zapatilla.imagen);
+                } else {
+                    mostrarNotificacion(`El producto ya está en el carrito: ${nombreZapatilla}`, zapatilla.imagen);
+                }
+            }
+        }
+
+    </script>
+    <script src="js/BuscadorVoz.js"></script>
+    <script src="js/sesionNav.js"></script>
+</body>
+
+</html>
