@@ -1,7 +1,7 @@
-# 🏪eccomerce - Frontend
+# 🏪 - eccomerce - Frontend
 
 En este proyecto crearemos un eccomerce que funcionara sin uso de backend, mediante fetch a ficheros json y almacenaje en local storage.
-## Installation
+## 🐈‍⬛ - Instalación
 
 Instala mi proyecto con git:
 
@@ -13,6 +13,6 @@ Mediante la extension live server ejecutar:
 ```bash
     index.html
 ```
-## Authors
+## 🙎 - Autores
 
 - [@IvanFernandez](https://www.github.com/bov0)
