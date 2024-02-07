@@ -16,6 +16,8 @@ En este proyecto crearemos un eccomerce que funcionara sin uso de backend, media
 
 las cookies se usaran para desplegar el aviso de cookies que deberan ser aceptadas debido a algunas funciones de la pagina para poder trabajar correctamente.
 
+Hacemos uso de web storage a la hora de creacion de usuarios, de login de usuarios y almacenaje de productos en el carrito.
+
 Te muestro algunos de los datos almacenados en local storage para ver como funciona.
 
 > [!IMPORTANT]
@@ -27,8 +29,6 @@ Te muestro algunos de los datos almacenados en local storage para ver como funci
   localStorage.getItem('contrasena');
   localStorage.getItem(`carrito-${emailUsuario}`);
 ```
-
-Hacemos uso de web storage a la hora de creacion de usuarios, de login de usuarios y almacenaje de productos en el carrito.
 
 ## 🐈‍⬛ - Instalación
 
