@@ -99,17 +99,18 @@ function anadirCarrito(zapatilla) {
     const nombreZapatilla = zapatilla.modelo;
 
     if (!localStorage.getItem('email')) {
-        mostrarNotificacion('Debes iniciar sesion', null);
+        mostrarNotificacion('Debes iniciar sesión', null);
         window.location.href = 'login.html';
     } else {
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const userEmail = localStorage.getItem('email');
+        let carrito = JSON.parse(localStorage.getItem(`carrito-${userEmail}`)) || [];
 
         const productoExistente = carrito.find(producto => producto === nombreZapatilla);
 
         if (!productoExistente) {
             carrito.push(nombreZapatilla);
 
-            localStorage.setItem('carrito', JSON.stringify(carrito));
+            localStorage.setItem(`carrito-${userEmail}`, JSON.stringify(carrito));
 
             if (audio) {
                 audio.play();

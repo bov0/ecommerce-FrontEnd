@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         return;
     }
 
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const emailUsuario = localStorage.getItem('email');
+    const carrito = JSON.parse(localStorage.getItem(`carrito-${emailUsuario}`)) || [];
+
     await mostrarCarrito(carrito);
     var botonComprar = document.getElementById('botonComprar');
     botonComprar.addEventListener('click', comprar);
