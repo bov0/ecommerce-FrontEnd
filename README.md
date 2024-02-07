@@ -19,7 +19,13 @@ En este proyecto crearemos un eccomerce que funcionara sin uso de backend, media
 
 ```bash
   localStorage.setItem('email', email);
+```
+
+```bash
   localStorage.setItem('contrasena', contrasena);
+```
+
+```bash
   localStorage.getItem(`carrito-${emailUsuario}`);
 ```
 
