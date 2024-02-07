@@ -18,6 +18,9 @@ las cookies se usaran para desplegar el aviso de cookies que deberan ser aceptad
 
 Te muestro algunos de los datos almacenados en local storage para ver como funciona.
 
+> [!IMPORTANT]
+> La primera vez que accedes a la web no habra usuarios, tendras que crearlos manualmente a traves del formulario en 'registrar.html'.
+
 ```bash
   localStorage.getItem('usuarios');
   localStorage.getItem('email');
