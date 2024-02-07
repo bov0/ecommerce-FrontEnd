@@ -18,9 +18,9 @@ En este proyecto crearemos un eccomerce que funcionara sin uso de backend, media
     algunas funciones de la pagina para poder trabajar correctamente.
 
 ```bash
-      localStorage.setItem('email', email);
-      localStorage.setItem('contrasena', contrasena);
-      localStorage.getItem(`carrito-${emailUsuario}`)
+  localStorage.setItem('email', email);
+  localStorage.setItem('contrasena', contrasena);
+  localStorage.getItem(`carrito-${emailUsuario}`);
 ```
 
     Hacemos uso de web storage a la hora de creacion de usuarios, de login de usuarios y almacenaje de productos en el carrito.
