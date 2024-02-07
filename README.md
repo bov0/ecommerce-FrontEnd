@@ -16,15 +16,12 @@ En este proyecto crearemos un eccomerce que funcionara sin uso de backend, media
 
 las cookies se usaran para desplegar el aviso de cookies que deberan ser aceptadas debido a algunas funciones de la pagina para poder trabajar correctamente.
 
-```bash
-  localStorage.setItem('email', email);
-```
+Te muestro algunos de los datos almacenados en local storage para ver como funciona.
 
 ```bash
-  localStorage.setItem('contrasena', contrasena);
-```
-
-```bash
+  localStorage.getItem('usuarios');
+  localStorage.getItem('email');
+  localStorage.getItem('contrasena');
   localStorage.getItem(`carrito-${emailUsuario}`);
 ```
 
