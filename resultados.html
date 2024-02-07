@@ -21,7 +21,7 @@
 <body>
     <nav class="w-75 mx-auto navbar sticky-top navbar-dark bg-dark align-items-center rounded-4">
         <div class="container-fluid">
-            <div id="contenedor" class="d-flex container-fluid justify-content-lg-between">
+            <div id="contenedor" class="d-flex container-fluid align-items-center justify-content-lg-between">
                 <a class="navbar-brand" href="index.html">
                     <img src="img/Logo-removebg-preview.png" alt="Logo" width="60" height="60">
                 </a>
@@ -39,8 +39,8 @@
                 </form>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="height: 40px; width: 40px; display: flex; align-items: center;">
+                    <span class="navbar-toggler-icon" style="height: 30px; width: 30px;"></span>
                 </button>
 
             </div>
@@ -183,6 +183,7 @@
 
             if (!localStorage.getItem('email')) {
                 mostrarNotificacion('Tienes que iniciar sesión', null);
+                window.location.href = 'login.html';
             } else {
                 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
