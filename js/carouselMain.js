@@ -12,6 +12,14 @@ async function cargarProductosAleatorios() {
             const carouselItem = document.createElement('div');
             // si index es 0 es ademas de carousel item, active;
             carouselItem.className = i === 0 ? 'carousel-item active' : 'carousel-item';
+            /*
+            if (index === 0) {
+                carouselItem.className = 'carousel-item active';
+            } else {
+                carouselItem.className = 'carousel-item';
+            }
+            No entiendo porque asi no funciona, si deberia ser igual
+            */
 
             const imagen = document.createElement('img');
             imagen.src = producto.imagen;

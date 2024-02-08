@@ -16,7 +16,7 @@ async function desplegarNovedades() {
 
         ultimosProductos.forEach(zapatilla => {
             const card = document.createElement('div');
-            card.className = 'card m-1 m-md-2 col-5 col-md-4 text-white position-relative rounded-4';
+            card.className = 'card m-1 m-md-2 col-5 col-md-5 text-white position-relative rounded-4';
 
             const imagen = document.createElement('img');
             imagen.className = 'card-img-top';
@@ -33,11 +33,11 @@ async function desplegarNovedades() {
             titulo.textContent = zapatilla.modelo;
 
             const marca = document.createElement('p');
-            marca.className = 'card-text';
+            marca.className = 'card-text d-none d-sm-block';
             marca.textContent = 'Marca: ' + zapatilla.marca;
 
             const color = document.createElement('p');
-            color.className = 'card-text';
+            color.className = 'card-text d-none d-sm-block';
             color.textContent = 'Color: ' + zapatilla.color;
 
             const precio = document.createElement('p');

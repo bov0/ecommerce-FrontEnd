@@ -14,8 +14,7 @@ async function desplegarTarjetas() {
 
         data.zapatillas.forEach(zapatilla => {
             const card = document.createElement('div');
-            card.className = 'card m-2 text-white position-relative rounded-4';
-            card.style.width = '14rem';
+            card.className = 'card m-1 col-5 col-md-3 text-white position-relative rounded-4';
 
             const imagen = document.createElement('img');
             imagen.className = 'card-img-top';
@@ -32,11 +31,11 @@ async function desplegarTarjetas() {
             titulo.textContent = zapatilla.modelo;
 
             const marca = document.createElement('p');
-            marca.className = 'card-text';
+            marca.className = 'card-text d-none d-sm-block';
             marca.textContent = 'Marca: ' + zapatilla.marca;
 
             const color = document.createElement('p');
-            color.className = 'card-text';
+            color.className = 'card-text d-none d-sm-block';
             color.textContent = 'Color: ' + zapatilla.color;
 
             const precio = document.createElement('p');
@@ -44,7 +43,7 @@ async function desplegarTarjetas() {
             precio.textContent = 'Precio: ' + zapatilla.precio + ' €';
 
             const boton = document.createElement('button');
-            boton.className = 'mx-auto btn btn-sm w-75 btn-light text-center';
+            boton.className = 'mx-auto btn btn-sm col-6 col-md-9 btn-light text-center';
             boton.id = 'boton';
             boton.textContent = 'Añadir carrito';
             boton.addEventListener('click', () => anadirCarrito(zapatilla));
