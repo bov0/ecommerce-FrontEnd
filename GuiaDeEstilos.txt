@@ -1,19 +1,29 @@
-- Arbol de directorios
-    En mi proyectos existe la siguiente estructura:
-        * JS : Donde se situan todos los scripts.
-        * CSS : Donde se situan los estilos externos a bootstrap que he usado.
-        * IMG : Donde se situan todas las imagenes usadas en el proyecto.
-        * AUDIO : Donde se situan los audios usados en el proyecto.
-
-        Luego nos encontramos con los '.html', el fichero JSON, el README y esta '.txt' llamado GuiaDeEstilos.
-
 - Fuentes utilizadas
     En mi caso he utilizado la misma fuente para toda la pagina que es: 'Chakra Petch';
     La elegi de Google Fonts
 
 - Colores utilizados
     Decidi usar una gama de colores blanco y negro porque creo que es lo mas elegante, todos son de bootstrap ya que quise minimizar el uso de ficheros .css, entre los cuales se incluyen:
+
         * light
         * dark
         * grey
         * tertiary
+
+- Imagenes usadas
+    Todas las imagenes usadas en el proyecto provienen de bing image creator y son de uso libre.
+
+- Estructura de navegación
+    * Inicio
+        ├── Busqueda
+        │   ├── Por voz
+        │   │   ├── Resultados
+        │   │  
+        │   └── Escrita
+        │       ├── Resultados
+        ├── Productos
+        ├── Iniciar/Cerrar Sesión
+        │   ├── Login
+        │   └── Registrar
+        ├── Carrito
+        └── Información

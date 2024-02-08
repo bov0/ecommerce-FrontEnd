@@ -5,6 +5,7 @@ En este proyecto crearemos un eccomerce que funcionara sin uso de backend, media
 ## 📝 - Arbol de directorios
 
     En mi proyectos existe la siguiente estructura:
+    
         * JS : Donde se situan todos los scripts.
         * CSS : Donde se situan los estilos externos a bootstrap que he usado.
         * IMG : Donde se situan todas las imagenes usadas en el proyecto.

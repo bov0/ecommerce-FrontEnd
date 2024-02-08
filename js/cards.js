@@ -14,7 +14,7 @@ async function desplegarTarjetas() {
 
         data.zapatillas.forEach(zapatilla => {
             const card = document.createElement('div');
-            card.className = 'card m-3 text-white position-relative rounded-4';
+            card.className = 'card m-2 text-white position-relative rounded-4';
             card.style.width = '14rem';
 
             const imagen = document.createElement('img');
@@ -102,15 +102,15 @@ function anadirCarrito(zapatilla) {
         mostrarNotificacion('Debes iniciar sesión', null);
         window.location.href = 'login.html';
     } else {
-        const userEmail = localStorage.getItem('email');
-        let carrito = JSON.parse(localStorage.getItem(`carrito-${userEmail}`)) || [];
+        const emailUsuario = localStorage.getItem('email');
+        let carrito = JSON.parse(localStorage.getItem(`carrito-${emailUsuario}`)) || [];
 
         const productoExistente = carrito.find(producto => producto === nombreZapatilla);
 
         if (!productoExistente) {
             carrito.push(nombreZapatilla);
 
-            localStorage.setItem(`carrito-${userEmail}`, JSON.stringify(carrito));
+            localStorage.setItem(`carrito-${emailUsuario}`, JSON.stringify(carrito));
 
             if (audio) {
                 audio.play();

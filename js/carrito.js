@@ -34,7 +34,7 @@ async function mostrarCarrito(carrito) {
                 <td class='w-25 text-center'>${zapatillaEncontrada.modelo}</td>
                 <td class='w-25 text-center'>${zapatillaEncontrada.marca}</td>
                 <td class='w-25 text-center'>${zapatillaEncontrada.precio} €</td>
-                <td class='d-flex justify-content-center'><img class='w-25 rounded-3' src=${zapatillaEncontrada.imagen}></img></td>
+                <td class='d-flex justify-content-center'><img class='col-12 col-md-3 rounded-3' src=${zapatillaEncontrada.imagen}></img></td>
             `;
 
             tableBody.appendChild(row);
@@ -48,7 +48,8 @@ async function mostrarCarrito(carrito) {
 }
 
 function comprar() {
-    localStorage.setItem('carrito', JSON.stringify([]));
+    const emailUsuario = localStorage.getItem('email');
+    localStorage.setItem(`carrito-${emailUsuario}`, JSON.stringify([]));
     mostrarNotificacion('Compra realizada');
     window.location.href = 'index.html';
 }
@@ -73,4 +74,3 @@ function mostrarNotificacion(mensaje) {
         });
     }
 }
-
